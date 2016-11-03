@@ -1,4 +1,4 @@
-package es.crowdynamics.cook.dao;
+package es.crowdynamics.cook.dao.impl;
 
 import java.math.BigDecimal;
 
@@ -7,12 +7,12 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.ResponseBody;
 
+import es.crowdynamics.cook.dao.RecipeDAO;
 import es.crowdynamics.cook.domain.Recipe;
 
 @Component
-public class RecipeDAO {
+public class RecipeDAOImpl implements RecipeDAO	{
 	
 	@PersistenceContext
 	private EntityManager entitymanager;
@@ -24,7 +24,7 @@ public class RecipeDAO {
 		this.entitymanager.persist(receta);
 	}
 	
-	public @ResponseBody Recipe findByName(String name)	{
+	public Recipe findByName(String name)	{
 		String query = "select o from Recipe o where o.name = :name";
 		return this.entitymanager.createQuery(query, Recipe.class).setParameter("name", name).getSingleResult();
 	}
