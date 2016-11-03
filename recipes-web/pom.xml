@@ -1,31 +1,48 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>es.cuervodynamics.app</groupId>
-    <artifactId>recipes-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-  </parent>
-  <artifactId>recipes-web</artifactId>
-  <packaging>war</packaging>
-  <name>recipes-web Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-    	<groupId>es.cuervodynamics.app</groupId>
-    	<artifactId>recipes-services-api</artifactId>
-    </dependency>
-    <dependency>
-    	<groupId>es.cuervodynamics.app</groupId>
-    	<artifactId>recipes-dao-api</artifactId>
-    </dependency>
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-webmvc</artifactId>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>recipes-web</finalName>
-  </build>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>es.cuervodynamics.app</groupId>
+		<artifactId>recipes-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>recipes-web</artifactId>
+	<packaging>war</packaging>
+	<name>recipes-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>es.cuervodynamics.app</groupId>
+			<artifactId>recipes-services-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.cuervodynamics.app</groupId>
+			<artifactId>recipes-dao-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>recipes-web</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.10.v20150310</version>
+				<configuration>
+					<!-- http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html -->
+					<scanIntervalSeconds>3</scanIntervalSeconds>
+					<!-- By Default, jetty start on port 8080 <httpConnector> <port>9090</port> 
+						</httpConnector> -->
+					<webApp>
+						<contextPath>/recipes-web</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
