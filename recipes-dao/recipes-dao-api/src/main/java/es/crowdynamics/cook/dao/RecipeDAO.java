@@ -1,6 +1,7 @@
 package es.crowdynamics.cook.dao;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import es.crowdynamics.cook.domain.Recipe;
 
@@ -11,4 +12,5 @@ public interface RecipeDAO {
 	public Recipe findById(BigDecimal id);
 	public void deleteRecipe(Recipe receta);
 	public void updateRecipe(Recipe receta);
+	public List<Recipe> findAll();
 }

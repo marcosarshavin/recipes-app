@@ -1,9 +1,11 @@
 package es.crowdynamics.cook.web;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,13 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import es.crowdynamics.cook.dao.RecipeDAO;
 import es.crowdynamics.cook.domain.Recipe;
 import es.crowdynamics.cook.services.recipe.RecipeService;
 
-@Controller
-@RequestMapping(value = "/Recipes")
+@RestController
+@RequestMapping(value = "/recipes")
 public class RecipeController {
 	
 	@Autowired
@@ -25,6 +28,12 @@ public class RecipeController {
 	
 	@Autowired
 	private RecipeService recipeService;
+	
+	@RequestMapping(value = "/findAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody List<Recipe> findAllRecepies()	{
+
+		return recipeDAO.findAll();
+	}
 	
 	@RequestMapping(method= RequestMethod.POST)
 	public ResponseEntity<String> createRecipe(@RequestBody Recipe receta)	{

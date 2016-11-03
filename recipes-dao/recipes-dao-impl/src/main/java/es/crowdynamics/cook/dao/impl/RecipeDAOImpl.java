@@ -1,6 +1,7 @@
 package es.crowdynamics.cook.dao.impl;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -41,5 +42,11 @@ public class RecipeDAOImpl implements RecipeDAO	{
 	public void updateRecipe(Recipe receta)	{
 		
 		this.entitymanager.merge(receta);
+	}
+
+	@Override
+	public List<Recipe> findAll()	{
+		String query = "select o from Recipe o";
+		return this.entitymanager.createQuery(query, Recipe.class).getResultList();
 	}
 }
