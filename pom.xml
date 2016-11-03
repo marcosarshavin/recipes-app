@@ -11,6 +11,7 @@
 		<module>recipes-domain</module>
 		<module>recipes-dao</module>
 		<module>recipes-services</module>
+		<module>recipes-cordova</module>
 	</modules>
 
 	<properties>
