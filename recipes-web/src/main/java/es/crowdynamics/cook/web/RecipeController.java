@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import es.crowdynamics.cook.dao.RecipeDAO;
 import es.crowdynamics.cook.domain.Recipe;
-import es.crowdynamics.cook.services.RecipeService;
+import es.crowdynamics.cook.services.recipe.RecipeService;
 
 @Controller
 @RequestMapping(value = "/Recipes")
@@ -22,8 +22,10 @@ public class RecipeController {
 	
 	@Autowired
 	private RecipeDAO recipeDAO;
+	
 	@Autowired
 	private RecipeService recipeService;
+	
 	@RequestMapping(method= RequestMethod.POST)
 	public ResponseEntity<String> createRecipe(@RequestBody Recipe receta)	{
 		
