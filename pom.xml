@@ -23,6 +23,33 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- Dependencias modulos propios -->
+			<dependency>
+				<groupId>es.cuervodynamics.app</groupId>
+				<artifactId>recipes-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>es.cuervodynamics.app</groupId>
+				<artifactId>recipes-dao-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>es.cuervodynamics.app</groupId>
+				<artifactId>recipes-dao-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>es.cuervodynamics.app</groupId>
+				<artifactId>recipes-services-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>es.cuervodynamics.app</groupId>
+				<artifactId>recipes-services-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		
 			<!-- Depdenecias de Test -->
 			<dependency>
 				<groupId>junit</groupId>
@@ -56,6 +83,11 @@
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
 
