@@ -3,7 +3,7 @@ package es.crowdynamics.cook.dao;
 import java.math.BigDecimal;
 import java.util.List;
 
-import es.crowdynamics.cook.domain.Recipe;
+import es.crowdynamics.cook.domain.Step;
 
 public interface StepDAO {
 	

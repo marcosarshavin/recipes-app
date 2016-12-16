@@ -50,13 +50,6 @@ public class Step {
 	public void setId(BigDecimal id) {
 		this.id = id;
 	}
-	public BigDecimal getIg
-	Id() {
-		return id;
-	}
-	public void setId(BigDecimal id) {
-		this.id = id;
-	}
 	
 	public BigDecimal getQuantity() {
 		return quantity;
@@ -74,9 +67,9 @@ public class Step {
 	}
 	
 	public Long getCookingTime() {
-		return StepCookingTime;
+		return stepCookingTime;
 	}
-	public void setCookingTime(Long cookingTime) {
+	public void setCookingTime(Long stepCookingTime) {
 		this.stepCookingTime = stepCookingTime;
 	}
 	public String getDescription() {
