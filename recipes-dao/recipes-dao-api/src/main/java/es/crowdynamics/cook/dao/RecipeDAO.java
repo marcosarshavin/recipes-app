@@ -7,10 +7,10 @@ import es.crowdynamics.cook.domain.Recipe;
 
 public interface RecipeDAO {
 	
-	public void createRecipe(Recipe receta);
-	public Recipe findByName(String name);
-	public Recipe findById(BigDecimal id);
-	public void deleteRecipe(Recipe receta);
-	public void updateRecipe(Recipe receta);
+	public void create(Recipe receta);
+	public Recipe find(String name);
+	public Recipe find(BigDecimal id);
+	public void delete(Recipe receta);
+	public void update(Recipe receta);
 	public List<Recipe> findAll();
 }

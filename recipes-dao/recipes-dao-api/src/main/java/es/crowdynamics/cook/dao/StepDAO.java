@@ -7,10 +7,10 @@ import es.crowdynamics.cook.domain.Step;
 
 public interface StepDAO {
 	
-	public void createStep(Step paso);
-	public Step findByName(String name);
-	public Step findById(BigDecimal id);
-	public void deleteStep(Step paso);
-	public void updateStep(Step paso);
+	public void create(Step paso);
+	public Step find(String name);
+	public Step find(BigDecimal id);
+	public void delete(Step paso);
+	public void update(Step paso);
 	public List<Step> findAll();
 }

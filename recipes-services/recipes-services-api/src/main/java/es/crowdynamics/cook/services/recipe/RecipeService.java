@@ -7,5 +7,5 @@ import es.crowdynamics.cook.domain.Recipe;
 public interface RecipeService {
 	
 	public void findAndRemove(BigDecimal id);
-	public void updaterecipe(Recipe receta);
+	public void update(Recipe receta);
 }

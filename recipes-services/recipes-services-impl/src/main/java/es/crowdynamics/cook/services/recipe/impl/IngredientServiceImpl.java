@@ -19,13 +19,12 @@ public class IngredientServiceImpl implements IngredientService {
 	
 	@Transactional(rollbackFor=Exception.class)
 	public void findAndRemove(BigDecimal id){
-		Ingredient ingrediente=ingredientDAO.findById(id);
-		ingredientDAO.deleteIngredient(ingrediente);
+		Ingredient ingrediente=ingredientDAO.find(id);
+		ingredientDAO.delete(ingrediente);
 	}
 
-	@Override
 	@Transactional(rollbackFor=Exception.class)
-	public void updateingredient(Ingredient ingrediente) {
-		ingredientDAO.updateIngredient(ingrediente);
+	public void update(Ingredient ingrediente) {
+		ingredientDAO.update(ingrediente);
 	}
 }

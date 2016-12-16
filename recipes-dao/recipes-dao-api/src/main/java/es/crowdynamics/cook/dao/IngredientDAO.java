@@ -7,10 +7,10 @@ import es.crowdynamics.cook.domain.Ingredient;
 
 public interface IngredientDAO {
 	
-	public void createIngredient(Ingredient ingrediente);
-	public Ingredient findByName(String name);
-	public Ingredient findById(BigDecimal id);
-	public void deleteIngredient(Ingredient ingrediente);
-	public void updateIngredient(Ingredient ingrediente);
+	public void create(Ingredient ingrediente);
+	public Ingredient find(String name);
+	public Ingredient find(BigDecimal id);
+	public void delete(Ingredient ingrediente);
+	public void update(Ingredient ingrediente);
 	public List<Ingredient> findAll();
 }

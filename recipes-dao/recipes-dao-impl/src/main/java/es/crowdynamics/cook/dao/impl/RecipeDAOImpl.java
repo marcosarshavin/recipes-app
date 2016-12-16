@@ -13,40 +13,20 @@ import es.crowdynamics.cook.dao.RecipeDAO;
 import es.crowdynamics.cook.domain.Recipe;
 
 @Component
-public class RecipeDAOImpl implements RecipeDAO	{
+public class RecipeDAOImpl extends GenericDAO<Recipe, BigDecimal> implements RecipeDAO	{
 	
-	@PersistenceContext
-	private EntityManager entitymanager;
-
-	
-	@Transactional(rollbackFor=Exception.class)
-	public void createRecipe(Recipe receta)	{
-		
-		this.entitymanager.persist(receta);
-	}
-	
-	public Recipe findByName(String name)	{
+	public Recipe find(String name)	{
 		String query = "select o from Recipe o where o.name = :name";
 		return this.entitymanager.createQuery(query, Recipe.class).setParameter("name", name).getSingleResult();
 	}
-	public  Recipe findById(BigDecimal id)	{
-		return this.entitymanager.find(Recipe.class, id);
-				
-	}
-	@Transactional(rollbackFor=Exception.class)
-	public void deleteRecipe(Recipe receta)	{
-		
-		this.entitymanager.remove(receta);
-	}
-	@Transactional(rollbackFor=Exception.class)
-	public void updateRecipe(Recipe receta)	{
-		
-		this.entitymanager.merge(receta);
+
+	@Override
+	protected String getTableName() {
+		return "Recipe";
 	}
 
 	@Override
-	public List<Recipe> findAll()	{
-		String query = "select o from Recipe o";
-		return this.entitymanager.createQuery(query, Recipe.class).getResultList();
+	protected Class<Recipe> getEntityClass() {
+		return Recipe.class;
 	}
 }

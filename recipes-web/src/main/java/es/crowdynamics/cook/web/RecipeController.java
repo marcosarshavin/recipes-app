@@ -36,23 +36,24 @@ public class RecipeController {
 	}
 	
 	@RequestMapping(method= RequestMethod.POST)
-	public ResponseEntity<String> createRecipe(@RequestBody Recipe receta)	{
+	public ResponseEntity<String> create(@RequestBody Recipe receta)	{
 		
-		recipeDAO.createRecipe(receta);
+		recipeDAO.create(receta);
 		
 		return new ResponseEntity<String>(HttpStatus.CREATED);
 	}
-	
+
+	//FIXME No se debe usar el DAO aqui
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody Recipe findRecipe(@RequestParam BigDecimal id)	{
+	public @ResponseBody Recipe find(@RequestParam BigDecimal id)	{
 		
-		Recipe recipe = recipeDAO.findById(id);
+		Recipe recipe = recipeDAO.find(id);
 		
 		return recipe;
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE)
-	public ResponseEntity<String> deleteRecipe(@RequestParam BigDecimal id)	{
+	public ResponseEntity<String> delete(@RequestParam BigDecimal id)	{
 		
 		recipeService.findAndRemove(id);
 		
@@ -60,8 +61,8 @@ public class RecipeController {
 		}
 	
 	@RequestMapping( method = RequestMethod.PUT)
-	public ResponseEntity<String> updateRecipe (@RequestBody Recipe receta){
-		recipeService.updaterecipe(receta);
+	public ResponseEntity<String> update(@RequestBody Recipe receta){
+		recipeService.update(receta);
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 	

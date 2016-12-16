@@ -7,5 +7,5 @@ import es.crowdynamics.cook.domain.Step;
 public interface StepService {
 	
 	public void findAndRemove(BigDecimal id);
-	public void updatestep(Step paso);
+	public void update(Step paso);
 }

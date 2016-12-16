@@ -19,15 +19,12 @@ public class StepServiceImpl implements StepService {
 	
 	@Transactional(rollbackFor=Exception.class)
 	public void findAndRemove(BigDecimal id){
-		Step paso=stepDAO.findById(id);
-		stepDAO.deleteStep(paso);
+		Step paso=stepDAO.find(id);
+		stepDAO.delete(paso);
 	}
 
-	@Override
 	@Transactional(rollbackFor=Exception.class)
-	public void updatestep(Step paso) {
-		stepDAO.updateStep(paso);
+	public void update(Step paso) {
+		stepDAO.update(paso);
 	}
-	
-	
 }

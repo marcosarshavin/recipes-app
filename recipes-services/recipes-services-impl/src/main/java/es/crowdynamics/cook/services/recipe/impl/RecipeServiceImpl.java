@@ -19,13 +19,13 @@ public class RecipeServiceImpl implements RecipeService {
 	
 	@Transactional(rollbackFor=Exception.class)
 	public void findAndRemove(BigDecimal id){
-		Recipe receta=recipeDAO.findById(id);
-		recipeDAO.deleteRecipe(receta);
+		Recipe receta=recipeDAO.find(id);
+		recipeDAO.delete(receta);
 	}
 	
 	@Transactional(rollbackFor=Exception.class)
-	public void updaterecipe (Recipe receta){
-		recipeDAO.updateRecipe(receta);
+	public void update(Recipe receta){
+		recipeDAO.update(receta);
 		
 	}
 }
