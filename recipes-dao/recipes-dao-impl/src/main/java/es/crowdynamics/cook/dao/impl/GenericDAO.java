@@ -12,23 +12,23 @@ public abstract class GenericDAO<T, PK> {
     @PersistenceContext
     protected EntityManager entitymanager;
 
-    public void create(T entity) {
+    protected void createEntity(T entity) {
         this.entitymanager.persist(entity);
     }
 
-    public  T find(PK id)	{
+    protected  T findEntity(PK id)	{
         return this.entitymanager.find(getEntityClass(), id);
     }
 
-    public void delete(T entity)	{
+    protected void deleteEntity(T entity)	{
         this.entitymanager.remove(entity);
     }
 
-    public void update(T entity)	{
+    protected void updateEntity(T entity)	{
         this.entitymanager.merge(entity);
     }
 
-    public List<T> findAll()	{
+    protected List<T> findAllEntity()	{
         return this.entitymanager.createQuery("select o from " + getTableName() + " o", getEntityClass()).getResultList();
     }
 

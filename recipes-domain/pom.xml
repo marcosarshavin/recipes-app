@@ -8,11 +8,5 @@
 	</parent>
 	<artifactId>recipes-domain</artifactId>
 
-	<dependencies>
-		<!-- Dependencias Hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-		</dependency> 
-	</dependencies>
+
 </project>

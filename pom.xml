@@ -12,6 +12,7 @@
 		<module>recipes-dao</module>
 		<module>recipes-services</module>
 		<module>recipes-cordova</module>
+		<module>recipes-entity</module>
 	</modules>
 
 	<properties>
@@ -48,6 +49,11 @@
 			<dependency>
 				<groupId>es.cuervodynamics.app</groupId>
 				<artifactId>recipes-services-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>es.cuervodynamics.app</groupId>
+				<artifactId>recipes-entity</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		

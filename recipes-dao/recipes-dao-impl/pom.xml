@@ -9,10 +9,11 @@
 	<artifactId>recipes-dao-impl</artifactId>
 
 	<dependencies>
-		<!-- <dependency>
+		
+		 <dependency>
 			<groupId>es.cuervodynamics.app</groupId>
-			<artifactId>recipes-domain</artifactId>
-		</dependency> -->
+			<artifactId>recipes-entity</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>es.cuervodynamics.app</groupId>
 			<artifactId>recipes-dao-api</artifactId>
