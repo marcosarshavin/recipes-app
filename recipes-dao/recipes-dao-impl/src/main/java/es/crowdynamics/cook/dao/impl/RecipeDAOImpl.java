@@ -31,8 +31,9 @@ public abstract class RecipeDAOImpl extends GenericDAO<Recipe, BigDecimal> imple
 	}
 
 	@Override
+	@Transactional
 	public void create(Recipe receta) {
-		
+		entitymanager.persist(receta);
 	}
 
 	@Override
@@ -43,23 +44,23 @@ public abstract class RecipeDAOImpl extends GenericDAO<Recipe, BigDecimal> imple
 	}
 
 	@Override
+	@Transactional
 	public void delete(Recipe receta) {
 	// TODO Auto-generated method stub
-	//	  entitymanager.find(receta.class, 1);
-		  entitymanager.getTransaction().begin();
 		  entitymanager.remove(receta);
-		  entitymanager.getTransaction().commit();
 		
 	}
-
+	@Transactional
 	@Override
 	public void update(Recipe receta) {
-			
+			entitymanager.merge(receta);
 	}
 
 	@Override
 	public List<Recipe> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String query = "select o from Recipe o ";
+	    return this.entitymanager.createQuery(query, Recipe.class).getResultList();
+	
+	
 	}
 }
