@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import es.crowdynamics.cook.dao.RecipeDAO;
 import es.crowdynamics.cook.domain.Recipe;
+import es.crowdynamics.cook.entity.RecipeEntity;
 import es.crowdynamics.cook.services.recipe.RecipeService;
 
 @RestController
@@ -30,7 +31,7 @@ public class RecipeController {
 	private RecipeService recipeService;
 	
 	@RequestMapping(value = "/findAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody List<Recipe> findAllRecepies()	{
+	public @ResponseBody List<RecipeEntity> findAllRecepies()	{
 
 		return recipeDAO.findAll();
 	}
@@ -38,16 +39,21 @@ public class RecipeController {
 	@RequestMapping(method= RequestMethod.POST)
 	public ResponseEntity<String> create(@RequestBody Recipe receta)	{
 		
-		recipeDAO.create(receta);
+		RecipeEntity recipeEntity = new RecipeEntity();
+		recipeEntity.setCookingTime(receta.getCookingTime());
+		recipeEntity.setnPersonas(receta.getnPersonas());
+		recipeEntity.setName(receta.getName());
+		
+		recipeDAO.create(recipeEntity);
 		
 		return new ResponseEntity<String>(HttpStatus.CREATED);
 	}
 
 	//FIXME No se debe usar el DAO aqui
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody Recipe find(@RequestParam BigDecimal id)	{
+	public @ResponseBody RecipeEntity find(@RequestParam BigDecimal id)	{
 		
-		Recipe recipe = recipeDAO.find(id);
+		RecipeEntity recipe = recipeDAO.find(id);
 		
 		return recipe;
 	}
@@ -58,7 +64,7 @@ public class RecipeController {
 		recipeService.findAndRemove(id);
 		
 		return new ResponseEntity<String>(HttpStatus.OK);
-		}
+	}
 	
 	@RequestMapping( method = RequestMethod.PUT)
 	public ResponseEntity<String> update(@RequestBody Recipe receta){

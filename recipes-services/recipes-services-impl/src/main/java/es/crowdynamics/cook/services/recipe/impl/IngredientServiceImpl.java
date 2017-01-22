@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import es.crowdynamics.cook.dao.IngredientDAO;
 import es.crowdynamics.cook.domain.Ingredient;
+import es.crowdynamics.cook.entity.IngredientEntity;
 import es.crowdynamics.cook.services.recipe.IngredientService;
 
 
@@ -19,12 +20,12 @@ public class IngredientServiceImpl implements IngredientService {
 	
 	@Transactional(rollbackFor=Exception.class)
 	public void findAndRemove(BigDecimal id){
-		Ingredient ingrediente=ingredientDAO.find(id);
+		IngredientEntity ingrediente = ingredientDAO.find(id);
 		ingredientDAO.delete(ingrediente);
 	}
 
 	@Transactional(rollbackFor=Exception.class)
 	public void update(Ingredient ingrediente) {
-		ingredientDAO.update(ingrediente);
+		throw new RuntimeException("Not yet implemented");
 	}
 }

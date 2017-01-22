@@ -11,7 +11,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>es.cuervodynamics.app</groupId>
-			<artifactId>recipes-domain</artifactId>
+			<artifactId>recipes-entity</artifactId>
 		</dependency>
 	</dependencies>
 </project>

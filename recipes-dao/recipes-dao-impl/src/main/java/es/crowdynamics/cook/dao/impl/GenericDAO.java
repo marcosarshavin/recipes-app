@@ -1,8 +1,11 @@
 package es.crowdynamics.cook.dao.impl;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.List;
+
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by Usuario on 16/12/2016.
@@ -12,23 +15,24 @@ public abstract class GenericDAO<T, PK> {
     @PersistenceContext
     protected EntityManager entitymanager;
 
-    protected void createEntity(T entity) {
+    @Transactional
+    public void create(T entity) {
         this.entitymanager.persist(entity);
     }
 
-    protected  T findEntity(PK id)	{
+    public  T find(PK id)	{
         return this.entitymanager.find(getEntityClass(), id);
     }
 
-    protected void deleteEntity(T entity)	{
+    public void delete(T entity)	{
         this.entitymanager.remove(entity);
     }
 
-    protected void updateEntity(T entity)	{
+    public void update(T entity)	{
         this.entitymanager.merge(entity);
     }
 
-    protected List<T> findAllEntity()	{
+    public List<T> findAll()	{
         return this.entitymanager.createQuery("select o from " + getTableName() + " o", getEntityClass()).getResultList();
     }
 

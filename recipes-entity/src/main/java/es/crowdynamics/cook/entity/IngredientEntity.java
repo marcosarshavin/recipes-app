@@ -12,8 +12,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Ingredient")
 @SequenceGenerator(name = "id_ingredient", sequenceName = "seq_ingredient_id", allocationSize = 1, initialValue = 1)
-
-
 public class IngredientEntity {
 	@Id
 	@GeneratedValue(generator="id_ingredient",strategy=GenerationType.AUTO)

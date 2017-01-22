@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import es.crowdynamics.cook.dao.StepDAO;
 import es.crowdynamics.cook.domain.Step;
+import es.crowdynamics.cook.entity.StepEntity;
 import es.crowdynamics.cook.services.recipe.StepService;
 
 
@@ -19,12 +20,12 @@ public class StepServiceImpl implements StepService {
 	
 	@Transactional(rollbackFor=Exception.class)
 	public void findAndRemove(BigDecimal id){
-		Step paso=stepDAO.find(id);
+		StepEntity paso = stepDAO.find(id);
 		stepDAO.delete(paso);
 	}
 
 	@Transactional(rollbackFor=Exception.class)
 	public void update(Step paso) {
-		stepDAO.update(paso);
+		throw new RuntimeException("Not yet implemented");
 	}
 }

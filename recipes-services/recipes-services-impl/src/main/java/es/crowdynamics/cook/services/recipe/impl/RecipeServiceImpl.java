@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import es.crowdynamics.cook.dao.RecipeDAO;
 import es.crowdynamics.cook.domain.Recipe;
+import es.crowdynamics.cook.entity.RecipeEntity;
 import es.crowdynamics.cook.services.recipe.RecipeService;
 
 
@@ -19,13 +20,12 @@ public class RecipeServiceImpl implements RecipeService {
 	
 	@Transactional(rollbackFor=Exception.class)
 	public void findAndRemove(BigDecimal id){
-		Recipe receta=recipeDAO.find(id);
+		RecipeEntity receta = recipeDAO.find(id);
 		recipeDAO.delete(receta);
 	}
 	
 	@Transactional(rollbackFor=Exception.class)
 	public void update(Recipe receta){
-		recipeDAO.update(receta);
-		
+		throw new RuntimeException("Not yet implemented");
 	}
 }

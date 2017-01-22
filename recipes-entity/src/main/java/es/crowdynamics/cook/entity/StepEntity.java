@@ -14,9 +14,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Step")
 @SequenceGenerator(name = "id_step", sequenceName = "seq_step_id", allocationSize = 1, initialValue = 1)
-
-
-
 public class StepEntity {
 
 	@Id
