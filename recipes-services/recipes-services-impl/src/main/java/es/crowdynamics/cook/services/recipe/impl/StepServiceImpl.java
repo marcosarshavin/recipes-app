@@ -20,8 +20,7 @@ public class StepServiceImpl implements StepService {
 	
 	@Transactional(rollbackFor=Exception.class)
 	public void findAndRemove(BigDecimal id){
-		StepEntity paso = stepDAO.find(id);
-		stepDAO.delete(paso);
+		stepDAO.delete(id);
 	}
 
 	@Transactional(rollbackFor=Exception.class)

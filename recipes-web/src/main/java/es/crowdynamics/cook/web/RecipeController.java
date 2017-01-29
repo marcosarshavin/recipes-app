@@ -43,8 +43,8 @@ public class RecipeController {
 		recipeEntity.setCookingTime(receta.getCookingTime());
 		recipeEntity.setnPersonas(receta.getnPersonas());
 		recipeEntity.setName(receta.getName());
-		
-		recipeDAO.create(recipeEntity);
+
+		recipeDAO.save(recipeEntity);
 		
 		return new ResponseEntity<String>(HttpStatus.CREATED);
 	}
@@ -52,8 +52,8 @@ public class RecipeController {
 	//FIXME No se debe usar el DAO aqui
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody RecipeEntity find(@RequestParam BigDecimal id)	{
-		
-		RecipeEntity recipe = recipeDAO.find(id);
+
+		RecipeEntity recipe = recipeDAO.findOne(id);
 		
 		return recipe;
 	}

@@ -20,8 +20,7 @@ public class RecipeServiceImpl implements RecipeService {
 	
 	@Transactional(rollbackFor=Exception.class)
 	public void findAndRemove(BigDecimal id){
-		RecipeEntity receta = recipeDAO.find(id);
-		recipeDAO.delete(receta);
+		recipeDAO.delete(id);
 	}
 	
 	@Transactional(rollbackFor=Exception.class)

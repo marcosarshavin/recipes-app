@@ -19,15 +19,12 @@
 		</dependency>
 		<dependency>
 			<groupId>es.cuervodynamics.app</groupId>
-			<artifactId>recipes-dao-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>es.cuervodynamics.app</groupId>
 			<artifactId>recipes-services-impl</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>es.cuervodynamics.app</groupId>
-			<artifactId>recipes-dao-impl</artifactId>
+			<artifactId>recipes-dao-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>

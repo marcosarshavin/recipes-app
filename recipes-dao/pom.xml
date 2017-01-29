@@ -9,6 +9,5 @@
   <packaging>pom</packaging>
   <modules>
   	<module>recipes-dao-api</module>
-  	<module>recipes-dao-impl</module>
   </modules>
 </project>
