@@ -52,6 +52,18 @@
 					</webApp>
 				</configuration>
 			</plugin>
+			<!-- http://localhost:8090/recipes-web -->
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.1.0.Alpha5</version>
+				<configuration>
+					<hostname>127.0.0.1</hostname>
+					<port>10000</port>
+					<username>admin</username>
+					<password>p4ssword</password>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
