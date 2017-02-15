@@ -12,7 +12,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Step")
+@Table(name="PASO")
 @SequenceGenerator(name = "id_step", sequenceName = "seq_step_id", allocationSize = 1, initialValue = 1)
 public class StepEntity {
 
@@ -28,6 +28,10 @@ public class StepEntity {
 	//Identificador del ingrediente a usar en el paso
 	@Column(name="idIngredient")
 	private BigDecimal idIngredient;
+
+	//Identificador del ingrediente a usar en el paso
+	@Column(name="idRecipe")
+	private BigDecimal idRecipe;
 	
 	//Cantidad del ingrediente a emplear en el paso
 	@Column(name="quantity")
@@ -40,13 +44,28 @@ public class StepEntity {
 	//Descripcion mas detallada del paso
 	@Column(name="description")
 	private String description;
-	
+		
 	public BigDecimal getId() {
 		return id;
 	}
 	public void setId(BigDecimal id) {
 		this.id = id;
 	}
+	
+	public BigDecimal getIdRecipe() {
+		return idRecipe;
+	}
+	public void setIdRecipe(BigDecimal idRecipe) {
+		this.idRecipe = idRecipe;
+	}
+	public BigDecimal getIdIngredient() {
+		return idIngredient;
+	}
+	public void setIdIngredient(BigDecimal idIngredient) {
+		this.idIngredient = idIngredient;
+	}
+	
+
 	
 	public BigDecimal getQuantity() {
 		return quantity;

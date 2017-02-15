@@ -10,19 +10,16 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="INGREDIENTE")
-@SequenceGenerator(name = "id_ingredient", sequenceName = "seq_ingredient_id", allocationSize = 1, initialValue = 1)
-public class IngredientEntity {
+@Table(name="RECETA_INGREDIENTE")
+@SequenceGenerator(name = "id_recipeIngredient", sequenceName = "seq_recipeIngredient_id", allocationSize = 1, initialValue = 1)
+public class RecipeIngredientEntity {
 	@Id
-	@GeneratedValue(generator="id_ingredient",strategy=GenerationType.AUTO)
+	@GeneratedValue(generator="id_recipeIngredient",strategy=GenerationType.AUTO)
 	@Column(name="id")
 	private BigDecimal id;
 	
 	@Column(name="name")
 	private String name;
-	
-	@Column(name="type")
-	private String type;
 	
 	public BigDecimal getId() {
 		return id;
@@ -36,10 +33,5 @@ public class IngredientEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
+	
 }
