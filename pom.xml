@@ -12,6 +12,7 @@
 		<module>recipes-services</module>
 		<module>recipes-cordova</module>
 		<module>recipes-entity</module>
+		<module>recipes-db</module>
 	</modules>
 
 	<properties>
