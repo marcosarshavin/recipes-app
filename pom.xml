@@ -8,7 +8,6 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>recipes-web</module>
-		<module>recipes-domain</module>
 		<module>recipes-dao</module>
 		<module>recipes-services</module>
 		<module>recipes-cordova</module>
@@ -26,11 +25,7 @@
 	<dependencyManagement>
 		<dependencies>
 			<!-- Dependencias modulos propios -->
-			<dependency>
-				<groupId>es.cuervodynamics.app</groupId>
-				<artifactId>recipes-domain</artifactId>
-				<version>${project.version}</version>
-			</dependency>
+	
 			<dependency>
 				<groupId>es.cuervodynamics.app</groupId>
 				<artifactId>recipes-dao-api</artifactId>

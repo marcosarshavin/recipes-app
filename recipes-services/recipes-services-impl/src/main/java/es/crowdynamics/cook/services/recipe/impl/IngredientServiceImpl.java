@@ -1,8 +1,9 @@
 package es.crowdynamics.cook.services.recipe.impl;
 
 import es.crowdynamics.cook.dao.IngredientDAO;
-import es.crowdynamics.cook.domain.Ingredient;
-import es.crowdynamics.cook.services.recipe.IngredientService;
+import es.crowdynamics.cook.services.IngredientService;
+import es.crowdynamics.cook.services.types.Ingredient;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

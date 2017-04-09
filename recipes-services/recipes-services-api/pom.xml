@@ -8,9 +8,6 @@
   <artifactId>recipes-services-api</artifactId>
   
   <dependencies>
-  	<dependency>
-  		<groupId>es.cuervodynamics.app</groupId>
-  		<artifactId>recipes-domain</artifactId>
-  	</dependency>
+
   </dependencies>
 </project>

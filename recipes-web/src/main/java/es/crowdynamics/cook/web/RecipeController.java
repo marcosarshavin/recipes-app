@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.crowdynamics.cook.dao.RecipeDAO;
-import es.crowdynamics.cook.domain.Recipe;
 import es.crowdynamics.cook.entity.RecipeEntity;
-import es.crowdynamics.cook.services.recipe.RecipeService;
+import es.crowdynamics.cook.services.RecipeService;
+import es.crowdynamics.cook.services.types.Recipe;
 
 @RestController
 @RequestMapping(value = "/recipes")

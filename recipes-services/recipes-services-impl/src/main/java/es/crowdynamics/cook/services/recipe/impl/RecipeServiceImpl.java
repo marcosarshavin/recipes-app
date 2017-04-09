@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import es.crowdynamics.cook.dao.RecipeDAO;
-import es.crowdynamics.cook.domain.Recipe;
 import es.crowdynamics.cook.entity.RecipeEntity;
-import es.crowdynamics.cook.services.recipe.RecipeService;
+import es.crowdynamics.cook.services.RecipeService;
+import es.crowdynamics.cook.services.types.Recipe;
 
 
 @Service
