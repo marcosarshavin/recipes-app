@@ -6,6 +6,13 @@
 	<artifactId>recipes-parent</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+	</parent>
+
 	<modules>
 		<module>recipes-web</module>
 		<module>recipes-dao</module>
@@ -18,8 +25,8 @@
 	<properties>
 		<hibernate.vesion>5.1.0.Final</hibernate.vesion>
 		<h2.version>1.4.190</h2.version>
-		<spring.version>4.3.0.RELEASE</spring.version>
-		<spring.data.version>1.10.7.RELEASE</spring.data.version>
+		<spring.version>4.3.7.RELEASE</spring.version>
+		<spring.data.version>1.11.1.RELEASE</spring.data.version>
 		<jackson.databind.version>2.5.0</jackson.databind.version>
 	</properties>
 

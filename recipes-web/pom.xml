@@ -1,69 +1,63 @@
 <?xml version="1.0"?>
 <project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>es.cuervodynamics.app</groupId>
-		<artifactId>recipes-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-	</parent>
-	<artifactId>recipes-web</artifactId>
-	<packaging>war</packaging>
-	<name>recipes-web Maven Webapp</name>
-	<url>http://maven.apache.org</url>
-	<dependencies>
-		<dependency>
-			<groupId>es.cuervodynamics.app</groupId>
-			<artifactId>recipes-services-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>es.cuervodynamics.app</groupId>
-			<artifactId>recipes-services-impl</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>es.cuervodynamics.app</groupId>
-			<artifactId>recipes-dao-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-		</dependency>
-	</dependencies>
-	<build>
-		<finalName>recipes-web</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.2.10.v20150310</version>
-				<configuration>
-					<!-- http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html -->
-					<scanIntervalSeconds>3</scanIntervalSeconds>
-					<!-- By Default, jetty start on port 8080 <httpConnector> <port>9090</port> 
-						</httpConnector> -->
-					<webApp>
-						<contextPath>/recipes-web</contextPath>
-					</webApp>
-				</configuration>
-			</plugin>
-			<!-- http://localhost:8090/recipes-web -->
-			<plugin>
-				<groupId>org.wildfly.plugins</groupId>
-				<artifactId>wildfly-maven-plugin</artifactId>
-				<version>1.1.0.Alpha5</version>
-				<configuration>
-					<hostname>127.0.0.1</hostname>
-					<port>10000</port>
-					<username>admin</username>
-					<password>p4ssword</password>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>es.cuervodynamics.app</groupId>
+        <artifactId>recipes-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>recipes-web</artifactId>
+    <packaging>war</packaging>
+    <name>recipes-web Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+
+        <!-- Spring boot dependencies-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>es.cuervodynamics.app</groupId>
+            <artifactId>recipes-services-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>es.cuervodynamics.app</groupId>
+            <artifactId>recipes-services-impl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>es.cuervodynamics.app</groupId>
+            <artifactId>recipes-dao-api</artifactId>
+        </dependency>
+
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>recipes-web</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
