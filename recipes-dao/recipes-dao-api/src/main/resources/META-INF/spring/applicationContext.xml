@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	      http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-    <jpa:repositories base-package="es.crowdynamics.cook.dao"  />
+    <jpa:repositories base-package="es.crowdynamics.cook.dao"/>
 
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -16,8 +16,8 @@
                 <property name="database" value="H2"/>
             </bean>
         </property>
-        <property name="packagesToScan" value="es.crowdynamics.cook.entity" />
-        <property name="jpaProperties" >
+        <property name="packagesToScan" value="es.crowdynamics.cook.entity"/>
+        <property name="jpaProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
@@ -27,13 +27,11 @@
         </property>
     </bean>
 
-    <beans profile="test">
-        <bean id="dataSource"
-              class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-            <property name="driverClassName" value="org.h2.Driver"/>
-            <property name="url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
-            <property name="username" value=""/>
-            <property name="password" value=""/>
-        </bean>
-    </beans>
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
+        <property name="username" value=""/>
+        <property name="password" value=""/>
+    </bean>
 </beans>
