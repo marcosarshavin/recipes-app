@@ -20,6 +20,7 @@
 		<module>recipes-cordova</module>
 		<module>recipes-entity</module>
 		<module>recipes-db</module>
+		<module>recipes-front</module>
 	</modules>
 
 	<properties>
@@ -33,7 +34,11 @@
 	<dependencyManagement>
 		<dependencies>
 			<!-- Dependencias modulos propios -->
-	
+			<dependency>
+				<groupId>es.cuervodynamics.app</groupId>
+				<artifactId>recipes-front</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>es.cuervodynamics.app</groupId>
 				<artifactId>recipes-dao-api</artifactId>
