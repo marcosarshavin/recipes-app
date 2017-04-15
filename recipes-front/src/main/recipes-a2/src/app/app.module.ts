@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { TitleComponent } from './title/title.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { RecetaResumenComponent } from './receta-resumen/receta-resumen.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TitleComponent } from './components/title/title.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { RecetaResumenComponent } from './components/receta-resumen/receta-resumen.component';
 
 @NgModule({
   declarations: [

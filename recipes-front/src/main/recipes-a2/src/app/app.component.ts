@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Receta } from './model/Receta';
-import { RecipesService } from './services/recipes.service'
+import { Recipe } from './model/Recipe/Recipe';
+import { RecipesService } from './services/Recipes/recipes.service'
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { RecipesService } from './services/recipes.service'
   providers: [RecipesService]
 })
 export class AppComponent {
-  recetas: Receta[];
+  recetas: Recipe[];
 
   constructor(private recipeService: RecipesService) {
 

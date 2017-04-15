@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Receta } from '../model/Receta'; 
+import { Recipe } from '../../model/Recipe/Recipe'; 
 //Mock Data:
-import { RECETAS } from '../mock_data/RECETAS'; 
+import { RECIPES } from '../../data/Recipes'; 
 
 @Injectable()
 export class RecipesService {
@@ -17,7 +17,7 @@ export class RecipesService {
 
     A Promise essentially promises to call back when the results are ready
   */
-  findAllRecipes(): Promise<Receta[]>  {
-    return Promise.resolve(RECETAS);
+  findAllRecipes(): Promise<Recipe[]>  {
+    return Promise.resolve(RECIPES);
   }
 }
