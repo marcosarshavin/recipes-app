@@ -10,5 +10,10 @@ export const RECIPES: Recipe[] = [
     "id": 2,
     "name": "Tortiella",
     "people": 4
+  },
+  {
+    "id": 3,
+    "name": "Huevos con Chorizo",
+    "people": 5
   }
 ];

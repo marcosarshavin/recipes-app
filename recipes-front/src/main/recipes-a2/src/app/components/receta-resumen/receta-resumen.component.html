@@ -1,5 +1,15 @@
-<div>
-  <h2>{{recipe.name}}</h2>
-  <div><label>id: </label>{{recipe.id}}</div>
-  <div><label>comensales: </label>{{recipe.people}}</div>
-</div>
+<md-card class="recipe-overview">
+  <md-card-header>
+    <div md-card-avatar class="recipe-overview-header"></div>
+    <md-card-title>{{recipe.name}}</md-card-title>
+    <md-card-subtitle>id: {{recipe.id}}, comensales: {{recipe.people}}</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="../../assets/img/logo.png">
+  <md-card-content>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+</md-card>
