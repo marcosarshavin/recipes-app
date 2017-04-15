@@ -9,7 +9,7 @@ import { RecipesService } from './services/Recipes/recipes.service'
   providers: [RecipesService]
 })
 export class AppComponent {
-  recetas: Recipe[];
+  recipes: Recipe[];
 
   constructor(private recipeService: RecipesService) {
 
@@ -21,7 +21,7 @@ export class AppComponent {
 
   getRecipes() {
     this.recipeService.findAllRecipes().then(
-      recetas => this.recetas = recetas
+      recipes => this.recipes = recipes
     );
   }
 }
