@@ -1,3 +1,8 @@
 <div class="container">
   <app-header></app-header>
+  <ul class="recetasDashboard">
+    <li *ngFor="let receta of recetas">
+      <app-receta-resumen [receta]="receta"></app-receta-resumen>
+    </li>
+  </ul>
 </div>
